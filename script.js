@@ -1,4 +1,5 @@
 const screen = document.getElementById("main-screen");
+const topScreen = document.getElementById("top-screen")
 
 const addition = (a, b) => Number(a) + Number(b);
 const subtraction = (a, b) => Number(a) - Number(b);
@@ -19,7 +20,7 @@ for (let i = 0; i < inputs.length; i++) {
 }
 
 const screenWriting = (e) => {
-  screen.innerHTML += e.target.value;
+  topScreen.innerHTML += e.target.value;
 };
 
 for (let j = 0; j < screenInputs.length; j++) {
@@ -45,7 +46,7 @@ const onKeyPress = (e) => {
     e.key == "."
   ) {
     calculation += e.key;
-    screen.innerHTML += e.key;
+    topScreen.innerHTML += e.key;
   } else if(e.key == "Enter"){
     calculate()
   } else if(e.key == "Backspace") {
@@ -92,4 +93,5 @@ const calculate = () => {
 const clearAll = () => {
   calculation = "";
   screen.innerHTML = "";
+  topScreen.innerHTML = "";
 };
