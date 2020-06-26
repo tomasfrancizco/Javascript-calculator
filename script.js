@@ -1,15 +1,15 @@
 const screen = document.getElementById("main-screen");
 
-const addition = (a, b) => a + b;
-const subtraction = (a, b) => a - b;
-const multiplication = (a, b) => a * b;
-const division = (a, b) => a / b;
+const addition = (a, b) => Number(a) + Number(b);
+const subtraction = (a, b) => Number(a) - Number(b);
+const multiplication = (a, b) => Number(a) * Number(b);
+const division = (a, b) => Number(a) / Number(b);
 
 let calculation = "";
 
 const numbers = document.getElementsByClassName("number");
 
-function addCalculation(e) {
+const addCalculation = e => {
   calculation += e.target.value;
   console.log(calculation);
 }
@@ -31,18 +31,23 @@ const calculate = () => {
   }
   switch (operator) {
     case "+":
-      screen.innerHTML = `${Number(top) + Number(bottom)}`;
+      screen.innerHTML = addition(top, bottom);
       break;
     case "-":
-      screen.innerHTML = `${Number(top) - Number(bottom)}`;
+      screen.innerHTML = subtraction(top, bottom);
       break;
-    case "x":
-      screen.innerHTML = `${Number(top) * Number(bottom)}`;
+    case "*":
+      screen.innerHTML = multiplication(top, bottom);
       break;
     case "/":
-      screen.innerHTML = `${Number(top) / Number(bottom)}`;
+      screen.innerHTML = division(top, bottom);
       break;
     default:
       return;
   }
 };
+
+const clearAll = () => {
+  calculation = "";
+  screen.innerHTML = "";
+}
