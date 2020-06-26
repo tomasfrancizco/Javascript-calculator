@@ -7,15 +7,15 @@ const division = (a, b) => Number(a) / Number(b);
 
 let calculation = "";
 
-const numbers = document.getElementsByClassName("number");
+const inputs = document.getElementsByClassName("input");
 
-const addCalculation = e => {
+const addCalculation = (e) => {
   calculation += e.target.value;
   console.log(calculation);
-}
+};
 
-for (let i = 0; i < numbers.length; i++) {
-  numbers[i].addEventListener("click", addCalculation);
+for (let i = 0; i < inputs.length; i++) {
+  inputs[i].addEventListener("click", addCalculation);
 }
 
 const calculate = () => {
@@ -23,7 +23,12 @@ const calculate = () => {
   let operator = "";
   let bottom = "";
   for (let i = 0; i < calculation.length; i++) {
-    if (calculation[i] === "+" || calculation[i] === "-" || calculation[i] === "*" || calculation[i] === "/") {
+    if (
+      calculation[i] === "+" ||
+      calculation[i] === "-" ||
+      calculation[i] === "*" ||
+      calculation[i] === "/"
+    ) {
       operator = calculation[i];
       top = calculation.split(calculation[i])[0];
       bottom = calculation.split(calculation[i])[1];
@@ -50,4 +55,4 @@ const calculate = () => {
 const clearAll = () => {
   calculation = "";
   screen.innerHTML = "";
-}
+};
