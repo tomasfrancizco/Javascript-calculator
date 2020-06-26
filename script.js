@@ -1,12 +1,7 @@
 const screen = document.getElementById("main-screen");
 const topScreen = document.getElementById("top-screen")
 
-const addition = (a, b) => Number(a) + Number(b);
-const subtraction = (a, b) => Number(a) - Number(b);
-const multiplication = (a, b) => Number(a) * Number(b);
-const division = (a, b) => Number(a) / Number(b);
-
-let calculation = "";
+let calc = "";
 
 const inputs = document.getElementsByClassName("input");
 const screenInputs = document.getElementsByClassName("screen-input");
@@ -57,37 +52,7 @@ const onKeyPress = (e) => {
 document.addEventListener("keydown", onKeyPress);
 
 const calculate = () => {
-  let top = "";
-  let operator = "";
-  let bottom = "";
-  for (let i = 0; i < calculation.length; i++) {
-    if (
-      calculation[i] === "+" ||
-      calculation[i] === "-" ||
-      calculation[i] === "*" ||
-      calculation[i] === "/"
-    ) {
-      operator = calculation[i];
-      top = calculation.split(calculation[i])[0];
-      bottom = calculation.split(calculation[i])[1];
-    }
-  }
-  switch (operator) {
-    case "+":
-      screen.innerHTML = addition(top, bottom);
-      break;
-    case "-":
-      screen.innerHTML = subtraction(top, bottom);
-      break;
-    case "*":
-      screen.innerHTML = multiplication(top, bottom);
-      break;
-    case "/":
-      screen.innerHTML = division(top, bottom);
-      break;
-    default:
-      return;
-  }
+  screen.innerHTML = eval(calculation)
 };
 
 const clearAll = () => {
