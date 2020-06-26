@@ -8,14 +8,22 @@ const division = (a, b) => Number(a) / Number(b);
 let calculation = "";
 
 const inputs = document.getElementsByClassName("input");
+const screenInputs = document.getElementsByClassName("screen-input");
 
 const addCalculation = (e) => {
   calculation += e.target.value;
-  console.log(calculation);
 };
 
 for (let i = 0; i < inputs.length; i++) {
   inputs[i].addEventListener("click", addCalculation);
+}
+
+const screenWriting = (e) => {
+  screen.innerHTML += e.target.value;
+};
+
+for(let j=0;j<screenInputs.length;j++){
+  screenInputs[j].addEventListener("click", screenWriting)
 }
 
 const calculate = () => {
