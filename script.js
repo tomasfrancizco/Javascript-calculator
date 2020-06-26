@@ -41,12 +41,15 @@ const onKeyPress = (e) => {
     e.key == "+" ||
     e.key == "-" ||
     e.key == "*" ||
-    e.key == "/"
+    e.key == "/" ||
+    e.key == "."
   ) {
     calculation += e.key;
     screen.innerHTML += e.key;
   } else if(e.key == "Enter"){
     calculate()
+  } else if(e.key == "Backspace") {
+    clearAll()
   }
 };
 
