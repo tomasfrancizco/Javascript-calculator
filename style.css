@@ -17,7 +17,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightgreen;
+  background-color: lightcyan;
 }
 
 .main-container {
@@ -30,8 +30,8 @@ body {
   border-radius: 10px;
   box-sizing: border-box;
   background-color: gray;
-  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5),
-    -5px -5px 10px 0 rgba(255, 255, 255, 0.5);
+  box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.5) inset,
+    -3px -3px 8px 0 rgba(0, 0, 0, 0.5) inset;
 }
 
 .sub-container {
@@ -51,14 +51,17 @@ body {
   height: 20px;
   font-size: 15px;
   box-sizing: border-box;
-  border-bottom: 1px dotted white;
 }
 
 #main-screen {
   padding-right: 8%;
-  height: 35px;
+  padding-top: 2%;
+  height: 50px;
   box-sizing: border-box;
   font-size: 30px;
+  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5) inset,
+  -3px -3px 5px 0 rgba(255, 255, 255, 0.5) inset;
+  border-radius: 50px;
 }
 
 #keys-container {
@@ -81,7 +84,8 @@ button:focus {
 
 button:active {
   border: 0px;
-  box-shadow: 1px 1px 1px lightgray;
+  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5) inset,
+    -3px -3px 5px 0 rgba(255, 255, 255, 0.5) inset;
 }
 
 .reg-input {
