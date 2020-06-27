@@ -1,5 +1,5 @@
 const screen = document.getElementById("main-screen");
-const topScreen = document.getElementById("top-screen")
+const topScreen = document.getElementById("top-screen");
 
 let calc = "";
 
@@ -7,7 +7,7 @@ const inputs = document.getElementsByClassName("input");
 const screenInputs = document.getElementsByClassName("screen-input");
 
 const addCalculation = (e) => {
-  calculation += e.target.value;
+  calc += e.target.value;
 };
 
 for (let i = 0; i < inputs.length; i++) {
@@ -21,6 +21,10 @@ const screenWriting = (e) => {
 for (let j = 0; j < screenInputs.length; j++) {
   screenInputs[j].addEventListener("click", screenWriting);
 }
+
+const calculate = () => {
+  screen.innerHTML = eval(calc);
+};
 
 const onKeyPress = (e) => {
   if (
@@ -40,23 +44,19 @@ const onKeyPress = (e) => {
     e.key == "/" ||
     e.key == "."
   ) {
-    calculation += e.key;
+    calc += e.key;
     topScreen.innerHTML += e.key;
-  } else if(e.key == "Enter"){
-    calculate()
-  } else if(e.key == "Backspace") {
-    clearAll()
+  } else if (e.key == "Enter") {
+    calculate();
+  } else if (e.key == "Backspace") {
+    clearAll();
   }
 };
 
 document.addEventListener("keydown", onKeyPress);
 
-const calculate = () => {
-  screen.innerHTML = eval(calculation)
-};
-
 const clearAll = () => {
-  calculation = "";
+  calc = "";
   screen.innerHTML = "";
   topScreen.innerHTML = "";
 };
