@@ -17,14 +17,6 @@ for (let j = 0; j < screenInputs.length; j++) {
 
 document.addEventListener("keydown", onKeyPress);
 
-String.prototype.replaceAt = function (index, replacement) {
-  return (
-    this.substr(0, index) +
-    replacement +
-    this.substr(index + replacement.length)
-  );
-};
-
 function addCalculation(e) {
   calc += e.target.value;
   if (
@@ -32,18 +24,17 @@ function addCalculation(e) {
     operators.includes(calc[calc.length - 1])
   ) {
     calc = calc.slice(0, -2) + calc.slice(-1);
-    console.log(calc)
   }
 }
 
-function screenWriting(e) {
+function screenWriting() {
   topScreen.innerHTML = calc;
 }
 
 function calculate() {
   const result = eval(calc);
-  console.log(result, calc);
   screen.innerHTML = result;
+  calc = "";
 }
 
 function onKeyPress(e) {
