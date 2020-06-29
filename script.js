@@ -58,7 +58,13 @@ function onKeyPress(e) {
     e.key == "."
   ) {
     calc += e.key;
-    topScreen.innerHTML += e.key;
+    if (
+      operators.includes(calc[calc.length - 2]) &&
+      operators.includes(calc[calc.length - 1])
+    ) {
+      calc = calc.slice(0, -2) + calc.slice(-1);
+    }
+    screenWriting()
   } else if (e.key == "Enter") {
     calculate();
   } else if (e.key == "Backspace") {
