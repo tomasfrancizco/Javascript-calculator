@@ -32,9 +32,11 @@ function screenWriting() {
 }
 
 function calculate() {
-  const result = eval(calc);
-  screen.innerHTML = result;
-  calc = "";
+  if (calc) {
+    const result = eval(calc);
+    screen.innerHTML = result;
+    calc = "";
+  }
 }
 
 function onKeyPress(e) {
