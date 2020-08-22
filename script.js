@@ -40,23 +40,24 @@ function calculate() {
 }
 
 function onKeyPress(e) {
-  if (
-    e.key == "0" ||
-    e.key == "1" ||
-    e.key == "2" ||
-    e.key == "3" ||
-    e.key == "4" ||
-    e.key == "5" ||
-    e.key == "6" ||
-    e.key == "7" ||
-    e.key == "8" ||
-    e.key == "9" ||
-    e.key == "+" ||
-    e.key == "-" ||
-    e.key == "*" ||
-    e.key == "/" ||
-    e.key == "."
-  ) {
+  const keys = [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "+",
+    "-",
+    "*",
+    "/",
+    ".",
+  ];
+  if (keys.includes(e.key)) {
     calc += e.key;
     if (
       operators.includes(calc[calc.length - 2]) &&
@@ -64,7 +65,7 @@ function onKeyPress(e) {
     ) {
       calc = calc.slice(0, -2) + calc.slice(-1);
     }
-    screenWriting()
+    screenWriting();
   } else if (e.key == "Enter") {
     calculate();
   } else if (e.key == "Backspace") {

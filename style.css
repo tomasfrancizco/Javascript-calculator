@@ -73,8 +73,8 @@ body {
 }
 
 button {
-  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5),
-    -3px -3px 5px 0 rgba(255, 255, 255, 0.5);
+  box-shadow: 5px 5px 8px 0 rgba(0, 0, 0, 0.5),
+    -5px -5px 8px 0 rgba(255, 255, 255, 0.5);
   border-width: 0;
   transition: opacity 0.1s;
   background: #efedef;
